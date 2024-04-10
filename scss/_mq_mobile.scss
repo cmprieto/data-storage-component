@@ -1,0 +1,49 @@
+/*MOVIL*/
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 375px;
+    height: 667px;
+    display: block;
+    &--bottom {
+      background-image: url("../../images/bg-mobile.png");
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-height: 100%;
+      &--cont {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 413px;
+        width: 326px;
+        top: 0;
+        &--logo {
+          width: 326px;
+          height: 201px;
+        }
+        .container--bottom--cont--storage {
+          width: 326px;
+          height: 196px;
+          &--backg {
+            width: 100%;
+            height: 196px;
+            &--progression {
+              width: 100%;
+              &--barra {
+                width: 100%;
+              }
+            }
+          }
+          &--remain {
+            position: relative;
+            left: 25%;
+            top: 85%;
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,29 +1,26 @@
 .container {
   box-sizing: border-box;
   width: 100%;
-  height: 800px;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  &--top {
-    width: 100%;
-    background-color: $verydarkblue;
-    height: 100%;
-  }
   &--bottom {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    height: 800px;
+    max-height: 800px;
     background-color: $verydarkblue;
+    /*  PROPIEDADES PARA FONDO DE PANTALLA NO SE REPITA Y POSITION */
     background-image: url("../../images/bg-desktop.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display: flex;
+    justify-content: center;
     &--cont {
+      width: 90%;
       display: flex;
       flex-wrap: wrap;
-      position: relative;
       justify-content: space-evenly;
-      top: -20%;
-      /*       left: 10%; */
+      align-items: center;
       &--logo {
+        /* LOGOTIPO EMPRESA */
         width: 350px;
         height: 201px;
         background-color: #1e2d69;
@@ -33,6 +30,7 @@
         justify-content: space-evenly;
         align-items: flex-start;
         padding-left: 40px;
+        /* ICONOS DE CARGA ARCHIVOS */
         &--iconos {
           display: flex;
           justify-content: space-between;
@@ -50,15 +48,19 @@
           }
         }
       }
+      /*     CONTENEDOR ALMACENAMIENTO */
       &--storage {
         width: 540px;
         height: 201px;
         background-color: $verydarkblue;
         position: relative;
         border-radius: 0 0 10px 10px;
+        display: flex;
+        justify-content: center;
+        /*   GLOBO DE TEXTO  */
         &--remain {
           position: relative;
-          left: 280px;
+          left: 115px;
           width: 179px;
           height: 72px;
           z-index: 99;
@@ -70,18 +72,20 @@
           & > h2 {
             font-size: 40px;
           }
+          /*  FLECHA GLOBO DE TEXTO */
           &:before {
             border: 23px solid white;
             content: "";
             border-left-color: transparent;
             border-bottom-color: transparent;
             border-right-color: transparent;
-            position: absolute;
+            position: absolute; /* UBICACION FLECHA POSICIONADO ABSOLUTE */
             bottom: -33px;
             left: 87.5%;
             transform: skewX(45deg);
           }
         }
+        /*BAJA CONTENEDOR A BOTTOM*/
         &--backg {
           position: absolute;
           bottom: 0px;
@@ -94,17 +98,15 @@
           flex-direction: column;
           align-items: flex-start;
           justify-content: space-evenly;
-
           & > p {
             color: $paleblue;
           }
+          /* CONTENEDOR BARRA DE PROGRESION DE ALMACENAMIENTO */
           &--progression {
             width: 461px;
             height: 42px;
-            /*    border: 1px solid orange; */
-
+            /* BARRA DE PROGRESION*/
             &--barra {
-              /*  border: 1px solid orange; */
               width: 459px;
               height: 20px;
               border-radius: 10px;
@@ -126,11 +128,10 @@
                   height: 10px;
                   border-radius: 10px;
                   background-color: $paleblue;
-                  /*   position: absolute;
-                  left: 320px; */
                 }
               }
             }
+            /* TEXTO DE TAMAÑO HD EN BARRA DE PROGRESION*/
             &--numbers {
               color: $paleblue;
               display: flex;
